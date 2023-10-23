@@ -60,11 +60,12 @@ export default function App() {
               fontFamily: 'Inter',
               fontSize: 14,
               fontWeight: 600,
+              fill: '#343434',
             }}
-            // padding={{ top: 80 }}
             tickMargin={32}
+            fontFamily="Inter"
+            fontSize={14}
           />
-          {/* <Tooltip /> */}
           <Legend
             wrapperStyle={{ position: 'absolute', top: -50 }}
             layout="horizontal"
@@ -75,11 +76,33 @@ export default function App() {
             markerWidth={5}
             fontSize={16}
           />
-          <Bar dataKey="By Day" fill="#FFD2DD" barSize={27} radius={10}>
-            <LabelList dataKey="By Day" position="insideTop" />
+          <defs>
+            <linearGradient id="colorUv" x1="0" y1="1" x2="0" y2="0.2">
+              <stop offset="30%" stopColor="#FFD2DD" stopOpacity={1} />
+              <stop offset="95%" stopColor="#FFFFFF" stopOpacity={0.8} />
+            </linearGradient>
+          </defs>
+          <defs>
+            <linearGradient id="colorXv" x1="0" y1="1" x2="0" y2="0.2">
+              <stop offset="30%" stopColor="#3E85F3" stopOpacity={1} />
+              <stop offset="95%" stopColor="#FFFFFF" stopOpacity={0.8} />
+            </linearGradient>
+          </defs>
+          <Bar dataKey="By Day" fill="url(#colorUv)" barSize={27} radius={10}>
+            <LabelList
+              dataKey="By Day"
+              position="insideTop"
+              fill="#343434"
+              style={{ fontWeight: 500 }}
+            />
           </Bar>
-          <Bar dataKey="By Month" fill="#3E85F3" barSize={27} radius={10}>
-            <LabelList dataKey="By Month" position="insideTop" />
+          <Bar dataKey="By Month" fill="url(#colorXv)" barSize={27} radius={10}>
+            <LabelList
+              dataKey="By Month"
+              position="insideTop"
+              fill="#343434"
+              style={{ fontWeight: 500 }}
+            />
           </Bar>
         </BarChart>
       </StatsContainer>
