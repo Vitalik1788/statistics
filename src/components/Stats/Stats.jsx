@@ -5,10 +5,8 @@ import {
   XAxis,
   YAxis,
   CartesianGrid,
-  Tooltip,
   Legend,
   LabelList,
-  Line,
 } from 'recharts';
 import { StatsContainer, StatsPageBox } from './Stats.styled';
 
@@ -35,10 +33,10 @@ export default function App() {
     <StatsPageBox>
       <StatsContainer>
         <BarChart
-          width={1087}
-          height={752}
+          width={640}
+          height={424}
           data={data}
-          margin={{ top: 40, right: 40, left: 40, bottom: 40 }}
+          margin={{ top: 77, right: 32, left: 32, bottom: 60 }}
         >
           <CartesianGrid vertical={false} stroke="#E3F3FF" />
           <XAxis
@@ -57,13 +55,14 @@ export default function App() {
             label={{
               value: 'Tasks',
               position: 'top',
-              dx: -30,
+              dx: -14,
+              dy: -24,
               fontFamily: 'Inter',
               fontSize: 14,
               fontWeight: 600,
             }}
-            padding={{ top: 80 }}
-            tickMargin={50}
+            // padding={{ top: 80 }}
+            tickMargin={32}
           />
           {/* <Tooltip /> */}
           <Legend

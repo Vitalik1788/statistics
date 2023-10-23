@@ -5,8 +5,8 @@ export const StatsPageBox = styled.div`
 `;
 
 export const StatsContainer = styled.div`
-  width: 1087px;
-  height: auto;
+  width: 640px;
+  height: 424px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 150px;
